@@ -26,7 +26,7 @@ function drawInteraction(faces, hands) {
     let whatGesture = detectHandGesture(hand)
 
     if (whatGesture == "Peace") {
-      fill(255, 38, 219) // pink
+      fill(0, 38, 219) // pink
     }
     if (whatGesture == "Thumbs Up") {
       fill(255, 252, 48) // yellow
