@@ -25,7 +25,7 @@ function drawInteraction(faces, hands) {
     Start drawing on the hands here
     */
 
-    fill(0, 225, 0);
+    fill(0, 225, 225);
     ellipse(indexFingerTipX, indexFingerTipY, 30, 30);
 
      drawPoints(hand)
