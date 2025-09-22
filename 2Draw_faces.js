@@ -64,11 +64,11 @@ function drawInteraction(faces, hands) {
     /*
     Start drawing on the face here
     */
-    noStroke()
+    stroke(1)
     fill(225, 225, 0);
-    // fill(get(leftEyeCenterX, leftEyeCenterY))
+    // fill(get(leftEyeCenterX, leftEyeCenterY))  //left eye fill
 
-    ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight);
+    ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight); //Left eye fill
 
     drawPoints(face.leftEye);
     drawPoints(face.leftEyebrow);
@@ -76,11 +76,11 @@ function drawInteraction(faces, hands) {
     drawPoints(face.rightEye);
     drawPoints(face.rightEyebrow);
 
-    // drawX(rightEyeCenterX,rightEyeCenterY);
-    // drawX(leftEyeCenterX,leftEyeCenterY);
+    drawX(rightEyeCenterX,rightEyeCenterY);
+    drawX(leftEyeCenterX,leftEyeCenterY);
 
 
-    // drawX(noseTipX,noseTipY); 
+    //  drawX(noseTipX,noseTipY); 
 
     // drawX(face.keypoints[332].x,face.keypoints[332].y);
     // drawX(face.keypoints[103].x,face.keypoints[103].y);
@@ -95,7 +95,7 @@ function drawInteraction(faces, hands) {
   // You can make addtional elements here, but keep the face drawing inside the for loop. 
 }
 
-function drawX(X, Y) {
+function drawX(X, Y) {// draws a cross on face
   push()
 
   strokeWeight(15)
