@@ -32,6 +32,26 @@ function drawInteraction(faces, hands) {
 
     fingerPuppet(indexFingerTipX, indexFingerTipY); //flower fingertip
     fingerPuppet(pinkyFingerTipX, pinkyFingerTipY); //flower fingertip
+    
+    let wristX = hand.wrist.x;
+    let wristY = hand.wrist.y;
+    let middleFingerMcpX = hand.middle_finger_mcp.x;
+    let middleFingerMcpY = hand.middle_finger_mcp.y;
+
+
+   let middleOfHandX = (middleFingerMcpX + wristX) / 2; // this average's the two points - finding the middle point between them
+   let middleOfHandY = (middleFingerMcpY + wristY) / 2;
+    //let testflower = dist(indexFingerMcpX, indexFingerMcpY, wristX, wristY);
+   // ellipse (middleOfHandX, middleOfHandY, testflower, testflower);
+
+    fill(255, 38, 219) // pink
+  ellipse(middleOfHandX, middleOfHandY, 100, 20)
+  ellipse(middleOfHandX, middleOfHandY, 20, 100)
+
+  fill(255, 252, 48) // yellow
+  ellipse(middleOfHandX, middleOfHandY, 20) // draw center 
+
+    //Middle(testflower,testflower);
     //chameleonHandPuppet(hand) //eyes
 
     /*

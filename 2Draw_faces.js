@@ -68,7 +68,7 @@ function drawInteraction(faces, hands) {
     fill(225, 225, 0);
     // fill(get(leftEyeCenterX, leftEyeCenterY))  //left eye fill
 
-    ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight); //Left eye fill
+    //ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight); //Left eye fill
 
     drawPoints(face.leftEye);
     drawPoints(face.leftEyebrow);
@@ -76,8 +76,8 @@ function drawInteraction(faces, hands) {
     drawPoints(face.rightEye);
     drawPoints(face.rightEyebrow);
 
-    drawX(rightEyeCenterX,rightEyeCenterY);
-    drawX(leftEyeCenterX,leftEyeCenterY);
+    // drawX(rightEyeCenterX,rightEyeCenterY);
+    // drawX(leftEyeCenterX,leftEyeCenterY);
 
 
     //  drawX(noseTipX,noseTipY); 
