@@ -136,6 +136,9 @@ function drawInteraction(faces, hands) {
     */
   noStroke();
 
+  fill(0)
+  rect(0, 0, 580, 720);
+  
 //Left(L) eyebrow(EB) quad(Q)
    let LcolourEBQ = get(LcolourEBQx,LcolourEBQy)
    fill(LcolourEBQ);
