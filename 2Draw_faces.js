@@ -25,86 +25,86 @@ function drawInteraction(faces, hands) {
      face.rightEyebrow
     */
     // Here are some variables you may like to use. 
-    // Face basics
-    let faceCenterX = face.faceOval.centerX;
-    let faceCenterY = face.faceOval.centerY;
-    let faceWidth = face.faceOval.width;
-    let faceheight = face.faceOval.height;
-    // Left eye
-    let leftEyeCenterX = face.leftEye.centerX;
-    let leftEyeCenterY = face.leftEye.centerY;
-    let leftEyeWidth = face.leftEye.width;
-    let leftEyeHeight = face.leftEye.height;
-    // Left eyebrow
-    let leftEyebrowCenterX = face.leftEyebrow.centerX;
-    let leftEyebrowCenterY = face.leftEyebrow.centerY;
-    let leftEyebrowWidth = face.leftEyebrow.width;
-    let leftEyebrowHeight = face.leftEyebrow.height;
+    // // Face basics
+    // let faceCenterX = face.faceOval.centerX;
+    // let faceCenterY = face.faceOval.centerY;
+    // let faceWidth = face.faceOval.width;
+    // let faceheight = face.faceOval.height;
+    // // Left eye
+    // let leftEyeCenterX = face.leftEye.centerX;
+    // let leftEyeCenterY = face.leftEye.centerY;
+    // let leftEyeWidth = face.leftEye.width;
+    // let leftEyeHeight = face.leftEye.height;
+    // // Left eyebrow
+    // let leftEyebrowCenterX = face.leftEyebrow.centerX;
+    // let leftEyebrowCenterY = face.leftEyebrow.centerY;
+    // let leftEyebrowWidth = face.leftEyebrow.width;
+    // let leftEyebrowHeight = face.leftEyebrow.height;
 
-    // Lips
-    let lipsCenterX = face.lips.centerX;
-    let lipsCenterY = face.lips.centerY;
-    let lipsWidth = face.lips.width;
-    let lipsHeight = face.lips.height;
+    // // Lips
+    // let lipsCenterX = face.lips.centerX;
+    // let lipsCenterY = face.lips.centerY;
+    // let lipsWidth = face.lips.width;
+    // let lipsHeight = face.lips.height;
 
-    // Right eye
-    let rightEyeCenterX = face.rightEye.centerX;
-    let rightEyeCenterY = face.rightEye.centerY;
-    let rightEyeWidth = face.rightEye.width;
-    let rightEyeHeight = face.rightEye.height;
+    // // Right eye
+    // let rightEyeCenterX = face.rightEye.centerX;
+    // let rightEyeCenterY = face.rightEye.centerY;
+    // let rightEyeWidth = face.rightEye.width;
+    // let rightEyeHeight = face.rightEye.height;
 
-    // Right eyebrow
-    let rightEyebrowCenterX = face.rightEyebrow.centerX;
-    let rightEyebrowCenterY = face.rightEyebrow.centerY;
-    let rightEyebrowWidth = face.rightEyebrow.width;
-    let rightEyebrowHeight = face.rightEyebrow.height;
+    // // ForeHead not using
+    // let rightEyebrowCenterX = face.rightEyebrow.centerX;
+    // let rightEyebrowCenterY = face.rightEyebrow.centerY;
+    // let rightEyebrowWidth = face.rightEyebrow.width;
+    // let rightEyebrowHeight = face.rightEyebrow.height;
 
-    let noseTipX = face.keypoints[4].x;
-    let noseTipY = face.keypoints[4].y;
+    // let noseTipX = face.keypoints[4].x;
+    // let noseTipY = face.keypoints[4].y;
     
-    let Lowerforeheadx = face.keypoints[9].x;   //topforhead triangle
-    let Lowerforeheady = face.keypoints[9].y;   //topforhead triangle
+    // let Lowerforeheadx = face.keypoints[9].x;   //topforhead triangle
+    // let Lowerforeheady = face.keypoints[9].y;   //topforhead triangle
 
-    let Leftforeheadx = face.keypoints[67].x;   //topforhead triangle
-    let Leftforeheady = face.keypoints[67].y;   //topforhead triangle
+    // let Leftforeheadx = face.keypoints[67].x;   //topforhead triangle
+    // let Leftforeheady = face.keypoints[67].y;   //topforhead triangle
 
-    let Rightforeheadx = face.keypoints[297].x;   //topforhead triangle
-    let Rightforeheady = face.keypoints[297].y;   //topforhead triangle
+    // let Rightforeheadx = face.keypoints[297].x;   //topforhead triangle
+    // let Rightforeheady = face.keypoints[297].y;   //topforhead triangle
     
-    let middleforeheadx = face.keypoints[151].x    //topforhead triangle colour
-    let middleforeheady = face.keypoints[151].y    //topforhead triangle colour
+    // let middleforeheadx = face.keypoints[151].x    //topforhead triangle colour
+    // let middleforeheady = face.keypoints[151].y    //topforhead triangle colour
     
    //Right(R) eyebrow(EB) quad(Q)
-    let RtopEBQx = face.keypoints[336].x  //right eyebrow quad
-    let RtopEBQy = face.keypoints[336].y  //right eyebrow quad
+    let RtopEBQx = face.keypoints[336].x  
+    let RtopEBQy = face.keypoints[336].y      
 
-    let RbottemEBQx = face.keypoints[285].x      //right eyebrow quad
-    let RbottemEBQy = face.keypoints[285].y  //right eyebrow quad
+    let RbottemEBQx = face.keypoints[285].x     
+    let RbottemEBQy = face.keypoints[285].y   
 
-    let RtopmidEBQx = face.keypoints[334].x  //right eyebrow quad
-    let RtopmidEBQy = face.keypoints[334].y  //right eyebrow quad
+    let RtopmidEBQx = face.keypoints[334].x   
+    let RtopmidEBQy = face.keypoints[334].y   
 
-    let RbottemmidEBQx = face.keypoints[282].x  //right eyebrow quad
-    let RbottemmidEBQy = face.keypoints[282].y  //right eyebrow quad
+    let RbottemmidEBQx = face.keypoints[282].x    
+    let RbottemmidEBQy = face.keypoints[282].y  
 
-    let RcolourEBQx = face.keypoints[295].x  //right eyebrow quad color
-    let RcolourEBQy = face.keypoints[295].y  //right eyebrow quad color
+    let RcolourEBQx = face.keypoints[295].x   
+    let RcolourEBQy = face.keypoints[295].y     
     
 //Left(L) eyebrow(EB) quad(Q)
-    let LtopEBQx = face.keypoints[107].x  //right eyebrow quad
-    let LtopEBQy = face.keypoints[107].y  //right eyebrow quad
+    let LtopEBQx = face.keypoints[107].x    
+    let LtopEBQy = face.keypoints[107].y    
 
-    let LbottemEBQx = face.keypoints[55].x      //right eyebrow quad
-    let LbottemEBQy = face.keypoints[55].y  //right eyebrow quad
+    let LbottemEBQx = face.keypoints[55].x        
+    let LbottemEBQy = face.keypoints[55].y    
 
-    let LtopmidEBQx = face.keypoints[105].x  //right eyebrow quad
-    let LtopmidEBQy = face.keypoints[105].y  //right eyebrow quad
+    let LtopmidEBQx = face.keypoints[105].x   
+    let LtopmidEBQy = face.keypoints[105].y 
 
-    let LbottemmidEBQx = face.keypoints[52].x  //right eyebrow quad
-    let LbottemmidEBQy = face.keypoints[52].y  //right eyebrow quad
+    let LbottemmidEBQx = face.keypoints[52].x   
+    let LbottemmidEBQy = face.keypoints[52].y   
 
-    let LcolourEBQx = face.keypoints[65].x  //right eyebrow quad color
-    let LcolourEBQy = face.keypoints[65].y  //right eyebrow quad color
+    let LcolourEBQx = face.keypoints[65].x    
+    let LcolourEBQy = face.keypoints[65].y    
 
        //Right(R) eyebrow(EB) trinagle(T)
     let RtopEBTx = face.keypoints[334].x; 
@@ -131,46 +131,97 @@ function drawInteraction(faces, hands) {
   
     let LcolourEBTx = face.keypoints[53].x;  
     let LcolourEBTy = face.keypoints[53].y;   
+    
+    let nosex = face.keypoints[2].x;    
+    let nosey = face.keypoints[2].y;
+
+    //lower lip
+    let Lcornerx = face.keypoints[61].x;    
+    let Lcornery = face.keypoints[61].y;
+    
+    let Rcornerx = face.keypoints[291].x;    
+    let Rcornery = face.keypoints[291].y;
+    
+    let Mmouthx = face.keypoints[17].x;    
+    let Mmouthy = face.keypoints[17].y;
+    
+    let Lmouthx = face.keypoints[17].x;    
+    let Lmouthy = face.keypoints[17].y;
+
+    let Rmouthx = face.keypoints[17].x;    
+    let Rmouthy = face.keypoints[17].y;
+    
+    let Cmouthx = face.keypoints[17].x;    
+    let Cmouthy = face.keypoints[17].y;
+    //  9/10/25 Rearanching progect
+    
+    
     /*
     Start drawing on the face here
     */
   noStroke();
-
-  fill(0)
-  rect(0, 0, 580, 720);
-  
 //Left(L) eyebrow(EB) quad(Q)
    let LcolourEBQ = get(LcolourEBQx,LcolourEBQy)
+ //Left(L) eyebrow(EB) trinagle(T)
+   let LEBT = get(LcolourEBTx,LcolourEBTy)
+//Right(R) eyebrow(EB) trinagle(T)
+   let REBT = get(RcolourEBTx,RcolourEBTy)
+  //Right(R) eyebrow(EB) quad(Q)
+   let RcolourEBQ = get(RcolourEBQx,RcolourEBQy)
+  //lower mouth
+  let Cmouth = get(Cmouthx,Cmouthy)
+   
+  
+  fill(0)
+  rect(0, 0, 1280, 720);
+  
+
+  Fill(Cmouth)
+    beginShape();
+  vertex(Lcornerx, Lcornery);
+  vertex(Rcornerx, Rcornery);
+  vertex(Rmouthx, Rmouthy);
+  vertex(Mmouthx, Mmouthy);
+ vertex(Lmouthx,Lmouthy);
+  endShape(CLOSE);
+//Left(L) eyebrow(EB) quad(Q)
    fill(LcolourEBQ);
    quad(LtopEBQx, LtopEBQy, LbottemEBQx, LbottemEBQy, LbottemmidEBQx, LbottemmidEBQy, LtopmidEBQx, LtopmidEBQy);
 
     //Left(L) eyebrow(EB) trinagle(T)
-   let LEBT = get(LcolourEBTx,LcolourEBTy)
    fill(LEBT)
    triangle(LtopEBTx,LtopEBTy,LbottemEBTx,LbottemEBTy,LrightEBTx,LrightEBTy)
 
 
    //Right(R) eyebrow(EB) trinagle(T)
-   let REBT = get(RcolourEBTx,RcolourEBTy)
    fill(REBT)
    triangle(RtopEBTx,RtopEBTy,RbottemEBTx,RbottemEBTy,RrightEBTx,RrightEBTy)
    
  //Right(R) eyebrow(EB) quad(Q)
-   let RcolourEBQ = get(RcolourEBQx,RcolourEBQy)
    fill(RcolourEBQ);
    quad(RtopEBQx, RtopEBQy, RbottemEBQx, RbottemEBQy, RbottemmidEBQx, RbottemmidEBQy, RtopmidEBQx, RtopmidEBQy);
 
-    //topforhead triangle
-   let topforheadcolor = get(middleforeheadx,middleforeheady)    //topforhead triangle colour
-   fill(topforheadcolor);
-   triangle(Lowerforeheadx, Lowerforeheady, Leftforeheadx, Leftforeheady, Rightforeheadx, Rightforeheady);
+
+
+
+
+
+
+
+
+
+
+
+
    
+  //   //topforhead triangle
+  //  let topforheadcolor = get(middleforeheadx,middleforeheady)    //topforhead triangle colour
+  //  fill(topforheadcolor);
+  //  triangle(Lowerforeheadx, Lowerforeheady, Leftforeheadx, Leftforeheady, Rightforeheadx, Rightforeheady);
    
-   
-   
-    fill(get(leftEyeCenterX, leftEyeCenterY))  //left eye fill
+  //   fill(get(leftEyeCenterX, leftEyeCenterY))  //left eye fill
     
-    ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight); //Left eye fill
+  //   ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight); //Left eye fill
     
 
     
