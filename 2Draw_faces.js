@@ -89,7 +89,7 @@ function drawInteraction(faces, hands) {
 
     let RcolourEBQx = face.keypoints[295].x   
     let RcolourEBQy = face.keypoints[295].y     
-    
+
 //Left(L) eyebrow(EB) quad(Q)
     let LtopEBQx = face.keypoints[107].x    
     let LtopEBQy = face.keypoints[107].y    
@@ -132,8 +132,6 @@ function drawInteraction(faces, hands) {
     let LcolourEBTx = face.keypoints[53].x;  
     let LcolourEBTy = face.keypoints[53].y;   
     
-    let nosex = face.keypoints[2].x;    
-    let nosey = face.keypoints[2].y;
 
     //lower lip
     let Lcornerx = face.keypoints[61].x;    
@@ -187,11 +185,49 @@ let Rightnosex = face.keypoints[327].x;
 let Rightnosey = face.keypoints[327].y;
 
 let LCnosex =  face.keypoints[79].x;
-let LCnosey =  face.keypoints[79].x;
+let LCnosey =  face.keypoints[79].y;
 
 let RCnosex =  face.keypoints[309].x;
-let RCnosey =  face.keypoints[309].x;
+let RCnosey =  face.keypoints[309].y;
 
+// Above Right Eyebrow 
+let AREtopx =  face.keypoints[338].x;
+let AREtopy =  face.keypoints[338].y;
+
+let AREsidex =  face.keypoints[332].x;
+let AREsidey =  face.keypoints[332].y;
+
+let AREcolourx =  face.keypoints[299].x;
+let AREcoloury =  face.keypoints[299].y;
+
+// Above Left Eyebrow 
+let ALEtopx =  face.keypoints[109].x;
+let ALEtopy =  face.keypoints[109].y;
+
+let ALEsidex =  face.keypoints[103].x;
+let ALEsidey =  face.keypoints[103].y;
+
+let ALEcolourx =  face.keypoints[69].x;
+let ALEcoloury =  face.keypoints[69].y;
+
+//side forhead right temple
+let LTtopx =  face.keypoints[332].x;
+let LTtopy =  face.keypoints[332].y;
+
+let LTsidex =  face.keypoints[389].x;
+let LTsidey =  face.keypoints[389].y;
+
+let LTcolourx =  face.keypoints[298].x;
+let LTcoloury =  face.keypoints[298].y;
+//side forhead Left temple
+let RTtopx =  face.keypoints[103].x;
+let RTtopy =  face.keypoints[103].y;
+
+let RTsidex =  face.keypoints[162].x;
+let RTsidey =  face.keypoints[162].y;
+
+let RTcolourx =  face.keypoints[68].x;
+let RTcoloury =  face.keypoints[68].y;
 //other points
   let noseTipX = face.keypoints[2].x;
   let noseTipY = face.keypoints[2].y;
@@ -207,6 +243,9 @@ let RCnosey =  face.keypoints[309].x;
     Start drawing on the face here
     */
   noStroke();
+
+  //Colours for fill
+
 //Left(L) eyebrow(EB) quad(Q)
    let LcolourEBQ = get(LcolourEBQx,LcolourEBQy)
  //Left(L) eyebrow(EB) trinagle(T)
@@ -222,15 +261,40 @@ let RCnosey =  face.keypoints[309].x;
  //nose whole
  let Rigthnosewhole = get(RCnosex,RCnosey)
  let Leftnosewhole = get(LCnosex,LCnosey)
+// Above Right Eyebrow 
+ let AREcolour = get(AREcolourx,AREcoloury)
+ // Above Right Eyebrow 
+ let ALEcolour = get(ALEcolourx,ALEcoloury)
+//side forhead right temple
+  let LTcolour = get(LTcolourx,LTcoloury)
+//side forhead Left temple
+  let RTcolour = get(RTcolourx,RTcoloury)
 
+//backdrop
   fill(0)
   rect(0, 0, 1000, 720);
   
+//Shapes
+
+//side forhead right temple
+   fill(RTcolour)
+    quad(RTtopx, RTtopy, RTsidex, RTsidey, LrightEBTx, LrightEBTy, LtopEBTx, LtopEBTy);
+//side forhead right temple
+   fill(LTcolour)
+    quad(LTtopx, LTtopy, LTsidex, LTsidey, RrightEBTx, RrightEBTy, RtopEBTx, RtopEBTy);
+// Above Right Eyebrow 
+   fill(AREcolour)
+    quad(AREtopx, AREtopy, AREsidex, AREsidey, RtopmidEBQx, RtopmidEBQy, RtopEBQx, RtopEBQy);
+// Above Right Eyebrow 
+   fill(ALEcolour)
+    quad(ALEsidex, ALEsidey, ALEtopx, ALEtopy, LtopEBQx, LtopEBQy, LtopmidEBQx, LtopmidEBQy);
+ //nose whole
   fill(Leftnosewhole)
  triangle(Leftnosex, Leftnosey, Lnosewholex, Lnosewholey, Lnosewingx, Lnosewingy);
  fill(Rigthnosewhole)
 triangle(Rightnosex, Rightnosey, Rnosewholex, Rnosewholey, Rnosewingx, Rnosewingy);
-  fill(Clip)
+ //upper lip
+fill(Clip)
   beginShape();
   vertex(Lcornerx, Lcornery);
   vertex(Rcornerx, Rcornery);
@@ -238,7 +302,7 @@ triangle(Rightnosex, Rightnosey, Rnosewholex, Rnosewholey, Rnosewingx, Rnosewing
   vertex(Mlipx, Mlipy);
  vertex(Llipx,Llipy);
   endShape(CLOSE)
-
+  //lower mouth
   fill(Cmouth)
     beginShape();
   vertex(Lcornerx, Lcornery);
@@ -250,8 +314,7 @@ triangle(Rightnosex, Rightnosey, Rnosewholex, Rnosewholey, Rnosewingx, Rnosewing
 
 //Left(L) eyebrow(EB) quad(Q)
    fill(LcolourEBQ);
-   quad(LtopEBQx, LtopEBQy, LbottemEBQx, LbottemEBQy, LbottemmidEBQx, LbottemmidEBQy, LtopmidEBQx, LtopmidEBQy);
-
+    quad(LbottemEBQx, LbottemEBQy, LtopEBQx, LtopEBQy, LbottemEBQx, LbottemEBQy, LbottemmidEBQx, LbottemmidEBQy);
     //Left(L) eyebrow(EB) trinagle(T)
    fill(LEBT)
    triangle(LtopEBTx,LtopEBTy,LbottemEBTx,LbottemEBTy,LrightEBTx,LrightEBTy)
