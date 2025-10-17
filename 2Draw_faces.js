@@ -1,7 +1,8 @@
+ let myImage
 // ----=  Faces  =----
 /* load images here */
 function prepareInteraction() {
-  //bgImage = loadImage('/images/background.png');
+  myImage = loadImage('Image.jpeg');
 }
 
 function drawInteraction(faces, hands) {
@@ -13,6 +14,7 @@ function drawInteraction(faces, hands) {
     if (showKeypoints) {
       drawPoints(face)
     }
+  
 
     /*
     Once this program has a face, it knows some things about it.
@@ -24,7 +26,7 @@ function drawInteraction(faces, hands) {
      face.rightEye
      face.rightEyebrow
     */
-   
+  
     // Here are some variables you may like to use. 
     // // Face basics
     // let faceCenterX = face.faceOval.centerX;
@@ -262,33 +264,33 @@ let RTcoloury =  face.keypoints[68].y;
  //nose whole
  let Rigthnosewhole = get(RCnosex,RCnosey)
  let Leftnosewhole = get(LCnosex,LCnosey)
-// Above Right Eyebrow 
- let AREcolour = get(AREcolourx,AREcoloury)
- // Above Right Eyebrow 
- let ALEcolour = get(ALEcolourx,ALEcoloury)
-//side forhead right temple
-  let LTcolour = get(LTcolourx,LTcoloury)
-//side forhead Left temple
-  let RTcolour = get(RTcolourx,RTcoloury)
+// // Above Right Eyebrow 
+//  let AREcolour = get(AREcolourx,AREcoloury)
+//  // Above Right Eyebrow 
+//  let ALEcolour = get(ALEcolourx,ALEcoloury)
+// //side forhead right temple
+//   let LTcolour = get(LTcolourx,LTcoloury)
+// //side forhead Left temple
+//   let RTcolour = get(RTcolourx,RTcoloury)
 
 //backdrop
   fill(0)
   rect(0, 0, 1000, 720);
   
 //Shapes
-
-//side forhead right temple
-   fill(RTcolour)
-    quad(RTtopx, RTtopy, RTsidex, RTsidey, LrightEBTx, LrightEBTy, LtopEBTx, LtopEBTy);
-//side forhead right temple
-   fill(LTcolour)
-    quad(LTtopx, LTtopy, LTsidex, LTsidey, RrightEBTx, RrightEBTy, RtopEBTx, RtopEBTy);
-// Above Right Eyebrow 
-   fill(AREcolour)
-    quad(AREtopx, AREtopy, AREsidex, AREsidey, RtopmidEBQx, RtopmidEBQy, RtopEBQx, RtopEBQy);
-// Above Right Eyebrow 
-   fill(ALEcolour)
-    quad(ALEsidex, ALEsidey, ALEtopx, ALEtopy, LtopEBQx, LtopEBQy, LtopmidEBQx, LtopmidEBQy);
+image(myImage, 0,0, 1280, 720)
+// //side forhead right temple
+//    fill(RTcolour)
+//     quad(RTtopx, RTtopy, RTsidex, RTsidey, LrightEBTx, LrightEBTy, LtopEBTx, LtopEBTy);
+// //side forhead right temple
+//    fill(LTcolour)
+//     quad(LTtopx, LTtopy, LTsidex, LTsidey, RrightEBTx, RrightEBTy, RtopEBTx, RtopEBTy);
+// // Above Right Eyebrow 
+//    fill(AREcolour)
+//     quad(AREtopx, AREtopy, AREsidex, AREsidey, RtopmidEBQx, RtopmidEBQy, RtopEBQx, RtopEBQy);
+// // Above Right Eyebrow 
+//    fill(ALEcolour)
+//     quad(ALEsidex, ALEsidey, ALEtopx, ALEtopy, LtopEBQx, LtopEBQy, LtopmidEBQx, LtopmidEBQy);
  //nose whole
   fill(Leftnosewhole)
  triangle(Leftnosex, Leftnosey, Lnosewholex, Lnosewholey, Lnosewingx, Lnosewingy);
@@ -315,7 +317,7 @@ fill(Clip)
 
 //Left(L) eyebrow(EB) quad(Q)
    fill(LcolourEBQ);
-    quad(LbottemEBQx, LbottemEBQy, LtopEBQx, LtopEBQy, LbottemEBQx, LbottemEBQy, LbottemmidEBQx, LbottemmidEBQy);
+    quad(LtopmidEBQx, LtopmidEBQy, LtopEBQx, LtopEBQy, LbottemEBQx, LbottemEBQy, LbottemmidEBQx, LbottemmidEBQy);
     //Left(L) eyebrow(EB) trinagle(T)
    fill(LEBT)
    triangle(LtopEBTx,LtopEBTy,LbottemEBTx,LbottemEBTy,LrightEBTx,LrightEBTy)
