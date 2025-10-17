@@ -24,6 +24,7 @@ function drawInteraction(faces, hands) {
      face.rightEye
      face.rightEyebrow
     */
+   
     // Here are some variables you may like to use. 
     // // Face basics
     // let faceCenterX = face.faceOval.centerX;
